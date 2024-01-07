@@ -1,6 +1,4 @@
-import Head from "next/head";
-import Nav from "../components/nav";
-import Script from "next/script";import React from 'react';
+import React from 'react';
 
 const index = () => {
   return (
