@@ -1,1 +1,1 @@
-# nesws
+# news
