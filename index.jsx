@@ -16,4 +16,4 @@ const index = () => {
   );
 };
 
-export default HomePage;
+export default index;
