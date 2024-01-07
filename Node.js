@@ -10,7 +10,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/maintenance', (req, res) => {
-  res.sendFile(https://github.com/Shahworld/nesws/blob/master/maintenance.html.join(__dirname, 'maintenance.html'));
+  res.sendFile('maintenance.html'.join(__dirname, 'maintenance.html'));
 });
 
 app.listen(PORT, () => {
