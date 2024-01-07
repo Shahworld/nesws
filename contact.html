@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #ludo-board {
+            display: grid;
+            grid-template-columns: repeat(11, 40px);
+            grid-template-rows: repeat(11, 40px);
+            gap: 2px;
+            border: 2px solid #333;
+        }
+
+        .cell {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid #333;
+        }
+
+        .red {
+            background-color: #ff6347;
+        }
+
+        .green {
+            background-color: #2ecc71;
+        }
+
+        .blue {
+            background-color: #3498db;
+        }
+
+        .yellow {
+            background-color: #f1c40f;
+        }
+
+        .center {
+            background-color: #fff;
+        }
+    </style>
+    <title>Ludo Board</title>
+</head>
+<body>
+
+<div id="ludo-board"></div>
+
+<script>
+    const ludoBoard = document.getElementById('ludo-board');
+
+    for (let row = 0; row < 11; row++) {
+        for (let col = 0; col < 11; col++) {
+            const cell = document.createElement('div');
+            cell.className = 'cell';
+
+            if (row === 0 || row === 10 || col === 0 || col === 10) {
+                // Home cells
+                cell.classList.add('center');
+            } else if ((row === 1 || row === 9) && (col >= 1 && col <= 9)) {
+                // Red and yellow safe zones
+                cell.classList.add(row === 1 ? 'red' : 'yellow');
+            } else if ((col === 1 || col === 9) && (row >= 1 && row <= 9)) {
+                // Blue and green safe zones
+                cell.classList.add(col === 1 ? 'blue' : 'green');
+            }
+
+            ludoBoard.appendChild(cell);
+        }
+    </script>
+
+</body>
+</html>
+
+
